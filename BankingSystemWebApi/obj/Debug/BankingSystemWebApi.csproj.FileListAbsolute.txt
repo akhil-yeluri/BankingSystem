@@ -79,7 +79,6 @@ C:\Users\Ak\Desktop\BankingSystem\BankingSystemWebApi\bin\Antlr3.Runtime.pdb
 C:\Users\Ak\Desktop\BankingSystem\BankingSystemWebApi\bin\System.Diagnostics.DiagnosticSource.xml
 C:\Users\Ak\Desktop\BankingSystem\BankingSystemWebApi\bin\Microsoft.AspNet.TelemetryCorrelation.xml
 C:\Users\Ak\Desktop\BankingSystem\BankingSystemWebApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Ak\Desktop\BankingSystem\BankingSystemWebApi\obj\Debug\BankingSystemWebApi.csprojAssemblyReference.cache
 C:\Users\Ak\Desktop\BankingSystem\BankingSystemWebApi\obj\Debug\BankingSystemWebApi.csproj.CoreCompileInputs.cache
 C:\Users\Ak\Desktop\BankingSystem\BankingSystemWebApi\obj\Debug\BankingSystemWebApi.csproj.CopyComplete
 C:\Users\Ak\Desktop\BankingSystem\BankingSystemWebApi\obj\Debug\BankingSystemWebApi.dll
