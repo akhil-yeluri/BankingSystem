@@ -1,0 +1,112 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CustomerPage</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script>
+
+        $(document).ready(function (){
+            $("#fundtransferform").hide()
+            $("#customisedministatementform").hide()
+            $("#changepasswordform").hide()
+
+
+
+
+            $("#fundtransfer").click(function () {
+                $("#fundtransferform").slideToggle("slow");
+                $("#customisedministatementform").hide()
+                $("#changepasswordform").hide()
+            });
+
+
+
+            $("#customisedministatement").click(function () {
+                $("#customisedministatementform").slideToggle("slow");
+                $("#fundtransferform").hide()  
+                $("#changepasswordform").hide()
+            });
+
+
+            //change password button click event
+            $("#changepassword").click(function () {
+
+                $("#changepasswordform").slideToggle("slow");
+                $("#fundtransferform").hide()
+                $("#customisedministatementform").hide() 
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <div>
+
+        <button id="fundtransfer">Fund Transfer</button>
+
+        <br />
+
+        <form id="fundtransferform">
+            <p>Source Account no</p>
+            <input type="text" id="SourceAccno" /><br />
+            <p>destination Account no</p>
+            <input type="text" id="DestinationAccno" /><br />
+            <p>Amount</p>
+            <input type="text" id="TransferAmount" /><br />
+            <p>Transferring Date</p>
+            <input type="text" id="TransferDate" /><br />
+            <p>comments</p>
+            <input type="text" id="FundTransferComments" />
+            <input type="submit" value="Transfer" id="TransfertBtn" />
+
+        </form>
+
+        <button id="balanceenquiry">Balance Enquiry</button>
+
+        <br />
+
+        <button id="ministatement">Mini Statement</button>
+        <br/>
+
+
+        <button id="customisedministatement">Customised Mini Statement</button>
+
+        <br />
+
+        <form id="customisedministatementform">
+            <p>Enter From Date</p>
+            <input type="text" id="FromDate" />
+            <br />
+            <p>Enter To Date</p>
+            <input type="text" id="ToDate" />
+            <input type="submit" value="Generate Custom Mini Statement" id="CustomMiniStatemenBtn" />
+        </form>
+
+        <button id="changepassword">Change Password</button>
+
+        <br />
+
+        <form id="changepasswordform">
+            <p>Enter Old Password</p>
+            <input type="text" id="oldpass" />
+            <br />
+            <p>Enter New Password</p>
+            <input type="text" id="newpass" />
+            <br />
+            <p>Renter New Password</p>
+            <input type="text" id="newpass2" />
+            <br />
+            <input type="submit" value="submit" id="SubmitChangePass" />
+        </form>
+    </div>
+</body>
+</html>

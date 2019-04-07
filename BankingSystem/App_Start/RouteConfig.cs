@@ -16,7 +16,7 @@ namespace BankingSystem
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Login", action = "LoginPage", id = UrlParameter.Optional }
+                defaults: new { controller = "Customer", action = "CustomerPage", id = UrlParameter.Optional }
             );
         }
     }

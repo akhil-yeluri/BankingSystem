@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "ManagerAdd";
+}
+
+<h2>ManagerAdd</h2>
+
+@using (Html.BeginForm("CustomerSuccessfullyAdded", "Manager"))
+{
+    <text>Customer Name</text>
+    @Html.TextBox("customername")
+    <br />
+    <text>Gender</text>
+    @Html.RadioButton("gender", "Male")
+    <text>Male </text>
+    @Html.RadioButton("gender", "Female")
+    <text>female </text>
+    <br />
+    <text>Date of Birth</text>
+    @Html.TextBox("dob")
+    <br />
+    <text>Address</text>
+    @Html.TextBox("address")
+    <br />
+    <text>City</text>
+    @Html.TextBox("city")
+    <br />
+    <text>State</text>
+    @Html.TextBox("state")
+    <br />
+    <text>Pincode</text>
+    @Html.TextBox("pincode")
+    <br />
+    <text>Email</text>
+    @Html.TextBox("email")
+    <br />
+    <input type="submit" value="Add" />
+}

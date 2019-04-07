@@ -9,7 +9,29 @@ namespace BankingSystem.Controllers
     public class ManagerController : Controller
     {
         // GET: Manager
-        public ActionResult Index()
+        public ActionResult ManagerPage()
+        {
+            return View();
+        }
+
+        public ActionResult ManagerAdd()
+        {
+            return View();
+        }
+
+        public ActionResult CheckIdAvailability()
+        {
+            
+            return Content("true");
+        }
+
+        public ActionResult CustomerSuccessfullyAdded()
+        {
+            return Content("Customer Registered Successfully");
+        }
+
+
+        public ActionResult ManagerEdit()
         {
             return View();
         }

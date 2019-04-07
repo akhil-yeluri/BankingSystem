@@ -1,0 +1,268 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#Adddrop").hide()
+            $("#Editdrop").hide()
+            $("#Deletedrop").hide()
+            $("#depositform").hide()
+            $("#withdrawform").hide()
+            $("#fundtransferform").hide()
+            $("#balanceenquiryform").hide()
+            $("#ministatementform").hide()
+            $("#customisedministatementform").hide()
+            $("#changepasswordform").hide()
+
+            $("#add").click(function () {
+                $("#Adddrop").slideToggle("slow");
+            });
+
+            $("#edit").click(function () {
+                $("#Editdrop").slideToggle("slow");
+            });
+
+            $("#delete").click(function () {
+                $("#Deletedrop").slideToggle("slow");
+            });
+
+            $("#deposit").click(function () {
+                $("#depositform").slideToggle("slow");
+            });
+
+
+            $("#withdrawamout").click(function () {
+                $("#withdrawform").slideToggle("slow");
+            });
+
+            $("#fundtransfer").click(function () {
+                $("#fundtransferform").slideToggle("slow");
+            });
+
+            $("#balanceenquiry").click(function () {
+                $("#balanceenquiryform").slideToggle("slow");
+            });
+
+            $("#ministatement").click(function () {
+                $("#ministatementform").slideToggle("slow");
+            });
+
+            
+            $("#customisedministatement").click(function () {
+                $("#customisedministatementform").slideToggle("slow");
+            });
+
+
+            //change password button click event
+            $("#changepassword").click(function () {
+
+                $("#changepasswordform").slideToggle("slow");
+                
+            });
+
+            //Customer AddButton Click Event
+            $("#SubmitAddBtn").click(function () {
+               //should do id validation before adding the customer
+               
+
+                $.ajax({
+                    type:'GET',
+                    url: '@Url.Action("CheckIdAvailability", "Manager")',
+                    async:true,
+                    success: function (response)
+                        {
+                            //Do Something With response object returned by your action
+                            //check for id in the database and perform appropriate action
+                       
+                            location.href = "ManagerAdd";
+       
+                    },
+
+                    error: function (result) {
+                        //handle any errors      
+                        alert("an error occured")
+                    }
+                });
+            });
+
+
+
+                 //Customer Edit button Click Event
+                        $("#SubmitEditBtn").click(function () {
+               
+               
+
+                $.ajax({
+                    type:'GET',
+                    url: '@Url.Action("CheckIdAvailability", "Manager")',
+                    async:true,
+                    success: function (response)
+                        {
+                            //Do Something With response object returned by your action
+                            //check for id in the database and perform appropriate action
+                       
+                            location.href = "ManagerEdit";
+       
+                    },
+
+                    error: function (result) {
+                        //handle any errors      
+                        alert("an error occured")
+                    }
+                });
+            });
+
+        });
+
+
+
+       
+
+    </script>
+    <style>
+        #add, #edit,#delete,#balanceenquiry,,#customisedministatement,#deposit,#fundtransfer,#ministatement,#withdrawamout,#changepassword{
+            padding: 5px;
+            text-align: center;
+            background-color: #e5eecc;
+            border: solid 1px #c3c3c3;
+        }
+    </style>
+</head>
+<body>
+
+
+    <button id="add">ADD Customer</button>
+    <br />
+
+    <form id="Adddrop">
+        <p>Enter Customer Id</p>
+        <input type="text" id="customerIdForAdd" />
+        <input type="submit" value="submit" id="SubmitAddBtn" />
+    </form>
+
+    <button id="edit">EDIT Customer</button>
+
+    <br />
+
+    <form id="Editdrop">
+        <p>Enter Customer Id</p>
+        <input type="text" id="customerIdForEdit" />
+        <input type="submit" value="submit" id="SubmitEditBtn" />
+    </form>
+
+   
+
+    <button id="delete">DELETE Customer</button>
+
+    <br />
+    <form id="Deletedrop">
+        <p>Enter Customer Id</p>
+        <input type="text" id="customerIdForDelete" />
+        <input type="submit" value="submit" id="SubmitDeleteBtn" />
+    </form>
+
+   
+
+    <button id="deposit">Deposit</button>
+
+    <br />
+    <form id="depositform">
+        <p>Account No.</p>
+        <input type="text" id="accNo" /><br />
+        <p>Amount</p>
+        <input type="text" id="depositAmount" /><br />
+        <p>Deposit Date</p>
+        <input type="text" id="depositDate" /><br />
+        <p>Comments</p>
+        <input type="text" id="comments" />
+        <input type="submit" value="deposit" id="depositbtn" />
+    </form>
+
+    <button id="withdrawamout">Withdraw Amout</button>
+
+    <br />
+    <form id="withdrawform">
+        <p>Account No.</p>
+        <input type="text" id="WithDrawaccNo" /><br />
+        <p>Amount</p>
+        <input type="text" id="WithDrawAmount" /><br />
+        <p>Withdraw Date</p>
+        <input type="text" id="WithdrawDate" /><br />
+        <p>Comments</p>
+        <input type="text" id="comments" />
+        <input type="submit" value="WithDraw" id="withdrawtbtn" />
+    </form>
+
+    <button id="fundtransfer">Fund Transfer</button>
+
+    <br />
+
+    <form id="fundtransferform">
+        <p>Source Account no</p>
+        <input type="text" id="SourceAccno" /><br />
+        <p>destination Account no</p>
+        <input type="text" id="DestinationAccno" /><br />
+        <p>Amount</p>
+        <input type="text" id="TransferAmount" /><br />
+        <p>Transferring Date</p>
+        <input type="text" id="TransferDate" /><br />
+        <p>comments</p>
+        <input type="text" id="FundTransferComments" />
+        <input type="submit" value="Transfer" id="TransfertBtn" />
+
+    </form>
+
+    <button id="balanceenquiry">Balance Enquiry</button>
+
+    <br />
+
+    <form id="balanceenquiryform">
+        <p>Enter Account number</p>
+        <input type="text" id="BalanceEnquiryaccno" />
+        <input type="submit" value="Balance Enquiry" id="BalanceEnquirybtn" />
+    </form>
+
+    <button id="ministatement">Mini Statement</button>
+
+    <br />
+
+    <form id="ministatementform">
+        <p>Enter Account number</p>
+        <input type="text" id="Ministatementaccno" />
+        <input type="submit" value="Generate Mini Statement" id="MiniStatemenBtn" />
+    </form>
+
+    <button id="customisedministatement">Customised Mini Statement</button>
+
+    <br />
+
+    <form id="customisedministatementform">
+        <p>Enter Account number</p>
+        <input type="text" id="CustomMinistatementaccno" />
+        <input type="submit" value="Generate Custom Mini Statement" id="CustomMiniStatemenBtn" />
+    </form>
+
+
+    <button id="changepassword">Change Password</button>
+
+    <br />
+
+    <form id="changepasswordform">
+        <p>Enter Old Password</p>
+        <input type="text" id="oldpass" />
+        <br />
+        <p>Enter New Password</p>
+        <input type="text" id="newpass" />
+        <br />
+        <p>Renter New Password</p>
+        <input type="text" id="newpass2" />
+        <br />
+        <input type="submit" value="submit" id="SubmitChangePass" />
+    </form>
+</body>
+</html>
